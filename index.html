@@ -231,13 +231,17 @@ footer{border-top:1px solid var(--border);padding:28px 10%;display:flex;justify-
 
   /* 🔥 FIX STATS OVERLAP */
   .hero-stats{
-    position:static !important;    /* MAIN FIX */
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
+    position:static !important;
     width:100%;
+    max-width:300px;          /* 🔥 important */
     margin-top:20px;
+    
+    display:flex;             /* change from grid */
+    flex-wrap:wrap;           /* 🔥 prevents overflow */
+    justify-content:center;
+    gap:10px;
   }
+
 
   .stat-item{
     padding:10px;
