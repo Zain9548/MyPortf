@@ -187,17 +187,82 @@ footer{border-top:1px solid var(--border);padding:28px 10%;display:flex;justify-
 ::-webkit-scrollbar-track{background:var(--bg);}
 ::-webkit-scrollbar-thumb{background:var(--accent3);}
 
+
+
 @media(max-width:768px){
-  nav{padding:16px 24px;}
-  .nav-links{display:none;}
-  section{padding:70px 6%;}
-  #hero{padding:100px 6% 60px;}
-  .hero-grid{grid-template-columns:1fr;gap:40px;}
-  .hero-visual{order:-1;}
-  .hero-img-wrap{width:200px;height:200px;}
-  .about-grid{grid-template-columns:1fr;gap:50px;}
-  .github-stats{grid-template-columns:repeat(2,1fr);}
-  footer{flex-direction:column;gap:10px;text-align:center;}
+
+  nav{
+    padding:16px 24px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  section{
+    padding:70px 6%;
+  }
+
+  #hero{
+    padding:100px 6% 60px;
+  }
+
+  /* 🔥 FIX HERO LAYOUT */
+  .hero-grid{
+    display:flex;                  /* FIX */
+    flex-direction:column;         /* FIX */
+    align-items:center;            /* CENTER */
+    gap:40px;
+  }
+
+  .hero-content{
+    order:2;                       /* TEXT BELOW IMAGE */
+    text-align:center;
+  }
+
+  .hero-visual{
+    order:1;                       /* IMAGE ON TOP */
+  }
+
+  .hero-img-wrap{
+    width:160px;                   /* REDUCED */
+    height:160px;
+  }
+
+  /* 🔥 FIX STATS OVERLAP */
+  .hero-stats{
+    position:static !important;    /* MAIN FIX */
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    width:100%;
+    margin-top:20px;
+  }
+
+  .stat-item{
+    padding:10px;
+  }
+
+  .stat-num{
+    font-size:16px;
+  }
+
+  /* OTHER SECTIONS */
+  .about-grid{
+    grid-template-columns:1fr;
+    gap:50px;
+  }
+
+  .github-stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  footer{
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+  }
+
 }
 </style>
 </head>
